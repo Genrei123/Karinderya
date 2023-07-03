@@ -132,7 +132,19 @@ text {
 .nav ul li a:hover {
     color: var(--background);
     background-color: var(--accent);
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: var(--primary-button);
+    color: var(--secondary-button);
+    padding: 1rem 2rem;
+    border-radius:  5px;
+    cursor: pointer;
 }
 
 /* Home */

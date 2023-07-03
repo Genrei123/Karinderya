@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App</title>
 
+    
     <link rel="stylesheet" href="../css/styles.css">
     <script type="module" src="../js/maps.js"></script>
 
@@ -13,12 +14,12 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
     
-    <!--Google Map API-->
-    <!--https://developers.google.com/maps/documentation/javascript/overview#maps_map_simple-html-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
 
     <!-- Scrolling script -->
     <script type = "text/javascript" src = "../js/scroll.js"></script>
+
+    
 
 </head>
 <body>
@@ -32,7 +33,9 @@
             <ul>
                 <li><a href="../html/index.html">Home</a></li>
                 <li><a href="#">About Us</a></li>
-                <li><a href="#"><i class="fa-regular fa-user"></i>  Login/Register</a></li>
+                <li class = "dropdown"></li>
+                    <button class = "dropbtn"><i class="fa-regular fa-user"></i> Account</button> 
+                </li>
             </ul>
         </div>
 
@@ -41,7 +44,9 @@
 
     <section id = "home">
         <h1 class="title">WELCOME!</h1>
-        <p class="sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione at voluptates ipsam ipsum a molestias eveniet unde nihil expedita, necessitatibus, consequatur assumenda, maiores ullam. Similique dicta maxime aut ab.</p>
+        <p class="sub">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione at voluptates ipsam ipsum a molestias eveniet unde nihil expedita, necessitatibus, consequatur assumenda, maiores ullam. Similique dicta maxime aut ab.
+        </p>
 
         <div class="search">
             <input type="text" placeholder="Search...">
