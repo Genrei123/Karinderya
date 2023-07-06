@@ -6,7 +6,7 @@
     <title>App</title>
 
     
-    <link rel="stylesheet" href= {{ url_for('static', filename = 'styles.css') }}>
+    <link rel="stylesheet" href= "{{ url_for('static', filename = 'styles.css') }} ">
     <script type="module" src="../../js/maps.js"></script>
 
     <!-- Scrolling script -->
@@ -24,8 +24,10 @@
 
         <div class="menu">
             <ul>
-                <li><a href="../../html/index.html">Home</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="#">About Us</a></li>
+                <li><a href="{{url_for('register') }}">Register</a></li>
+                <li><a href="{{url_for('login') }}">Login</a></li>
                 </li>
             </ul>
         </div>

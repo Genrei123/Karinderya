@@ -8,7 +8,7 @@
   <component name="TemplatesService">
     <option name="TEMPLATE_FOLDERS">
       <list>
-        <option value="$MODULE_DIR$/pangmasa/templates" />
+        <option value="$MODULE_DIR$/pangmasa/server/templates" />
       </list>
     </option>
   </component>
