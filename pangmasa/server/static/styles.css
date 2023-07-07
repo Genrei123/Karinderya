@@ -258,3 +258,16 @@ text {
 footer {
     border: 1px solid black;
 }
+
+/* Error */
+.flash-messages {
+    width: 100%;
+    height: 10%;
+
+    background: red;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

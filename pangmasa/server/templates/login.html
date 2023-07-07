@@ -1,41 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App</title>
+{% extends "layout.html" %}
 
-    <link rel="stylesheet" href= "{{ url_for('static', filename = 'credentials.css') }}">
+{% block title %}
+    Registration
+{% endblock %}
 
-    
+{% block main %}
 
-</head>
-
-    <body>
-        
-
-        <div class="container">
+    <div class="container">
             <div class="login register">
                 <h1>Login</h1>
-                
+
                 <form action="{{ url_for('login') }}" method="POST">
-                    <input type="text" id = "username" name="username" placeholder="Username" required> 
+                    <input type="text" id = "username" name="username" placeholder="Username" required>
                     <input type="password" class = "password" id = "password1" name="password" placeholder="Password" required>
                     <input class = "button" type="submit" name="submit" value="Login">
 
                     <p>Don't have an account? <a href="register.html">Click here!</a></p>
                 </form>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="flash-messages">
+                {% for message in messages %}
+                    <div class = "eror">{{ message }}</div>
+                {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+
+
             </div>
-        </div>
 
 
+    </div>
+
+{% endblock %}
 
 
-
-
-
-
-
-        <script src = "../../js/register.js"></script>
-    </body>
-</html>

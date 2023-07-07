@@ -1,39 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App</title>
+{% extends "layout.html" %}
 
-    
-    <link rel="stylesheet" href= "{{ url_for('static', filename = 'styles.css') }} ">
-    <script type="module" src="../../js/maps.js"></script>
+{% block title %}
+    Registration
+{% endblock %}
 
-    <!-- Scrolling script -->
-    <script type = "text/javascript" src = "../../js/scroll.js"></script>
-
-    
-
-</head>
-<body>
-
-    <div class="nav" id = "nav">
-        <div class="logo">
-            
-        </div>
-
-        <div class="menu">
-            <ul>
-                <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="{{url_for('register') }}">Register</a></li>
-                <li><a href="{{url_for('login') }}">Login</a></li>
-                </li>
-            </ul>
-        </div>
-
-    </div>
-
+{% block main %}
 
     <section id = "home">
         <h1 class="title">WELCOME!</h1>
@@ -48,68 +19,67 @@
 
         <div class="btnholders">
             <button>Post Karenderya</button>
-            
         </div>
 
         <div id="map"></div>
-        
+
     </section>
 
 
     <section id="karenderyas">
         <h1 class="title">Looking to eat?</h1>
         <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-        
+
         <div class="post">
-            
+
                 <button>Post Karenderya</button>
-            
+
         </div>
-        
+
 
         <div class="container">
             <div class="karenderya">
                 <h2 class="title">Cristobal Store</h2>
                 <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-    
+
                 <div class="btnholders">
                     <button>Get Location</button>
                     <button>Share Location</button>
                     <button><i class="fa-regular fa-star"></i> Star</button>
                 </div>
-    
-                <div class="images"></div>
-            </div>
-    
-            <div class="karenderya">
-                <h2 class="title">Cristobal Store</h2>
-                <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-    
-                <div class="btnholders">
-                    <button>Get Location</button>
-                    <button>Share Location</button>
-                    <button><i class="fa-regular fa-star"></i> Star</button>
-                </div>
-    
+
                 <div class="images"></div>
             </div>
 
             <div class="karenderya">
                 <h2 class="title">Cristobal Store</h2>
                 <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-                
+
                 <div class="btnholders">
                     <button>Get Location</button>
                     <button>Share Location</button>
                     <button><i class="fa-regular fa-star"></i> Star</button>
                 </div>
-    
+
+                <div class="images"></div>
+            </div>
+
+            <div class="karenderya">
+                <h2 class="title">Cristobal Store</h2>
+                <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+
+                <div class="btnholders">
+                    <button>Get Location</button>
+                    <button>Share Location</button>
+                    <button><i class="fa-regular fa-star"></i> Star</button>
+                </div>
+
                 <div class="images"></div>
             </div>
 
         </div>
 
-        
+
 
 
     </section>
@@ -118,7 +88,4 @@
         <h3>Made with love...</h3>
     </footer>
 
-
-    
-</body>
-</html>
+{% endblock %}
