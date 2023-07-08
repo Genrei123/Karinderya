@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Registration
+    Index
 {% endblock %}
 
 {% block main %}
@@ -14,12 +14,12 @@
 
         <div class="search">
             <input type="text" placeholder="Search...">
-            <button>Search</button>
+            <input class = "button" type="submit" name="search" value="Search">
         </div>
 
-        <div class="btnholders">
-            <button>Post Karenderya</button>
-        </div>
+        <form action="{{ url_for('post') }}" method="GET">
+            <input class = "button" type="submit" name="post" value="Post Karenderya">
+        </form>
 
         <div id="map"></div>
 

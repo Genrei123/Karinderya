@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Post
+{% endblock %}
+
+{% block main %}
+
+    <div class="container">
+            <div class="post">
+                <h1>Post Karenderya</h1>
+
+                <form action="{{ url_for('post') }}" method="POST">
+                    <input type="text" id = "username" name="location" placeholder="Location " required>
+                    <input type="text" id = "username" name="price" placeholder="Satisfactory Price" required>
+
+                    <input class = "button" type="submit" name="submit" value="Post">
+                </form>
+
+                {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <div class="flash-messages">
+                {% for message in messages %}
+                    <div class = "eror">{{ message }}</div>
+                {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+
+            </div>
+    </div>
+
+{% endblock %}
+
+

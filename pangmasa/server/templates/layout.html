@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href= "{{ url_for('static', filename = 'styles.css') }} ">
     <link rel="stylesheet" href= "{{ url_for('static', filename = 'credentials.css') }} ">
-    <script type="module" src="../../js/maps.js"></script>
+    <script type="module" src="{{ url_for ('static', filename = 'scroll.js') }}"></script>
 
     <!-- Scrolling script -->
     <script type = "text/javascript" src = "../../js/scroll.js"></script>
@@ -24,7 +24,7 @@
         </div>
 
         <div class="menu">
-            {% if session["user"] %}
+            {% if session["user_id"] %}
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="#">About Us</a></li>
