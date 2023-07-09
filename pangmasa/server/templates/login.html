@@ -6,16 +6,21 @@
 
 {% block main %}
 
-    <div class="container">
+    <div class="form_container">
             <div class="login">
-                <h1>Login</h1>
+
 
                 <form action="{{ url_for('login') }}" method="POST">
-                    <input type="text" id = "username" name="username" placeholder="Username" required>
-                    <input type="password" class = "password" id = "password1" name="password" placeholder="Password" required>
-                    <input class = "button" type="submit" name="submit" value="Login">
 
-                    <p>Don't have an account? <a href="register.html">Click here!</a></p>
+                    <div class="input_container">
+                        <h1>Login</h1>
+                        <input type="text" id = "username" name="username" placeholder="Username" required>
+                        <input type="password" class = "password" id = "password1" name="password" placeholder="Password" required>
+                        <input class = "button" type="submit" name="submit" value="Login">
+
+                        <p>Don't have an account? <a href="{{url_for('register') }}">Click here!</a></p>
+                    </div>
+                    
                 </form>
 
                 {% with messages = get_flashed_messages() %}

@@ -7,21 +7,33 @@
 {% block main %}
 
     <section id = "home">
-        <h1 class="title">WELCOME!</h1>
-        <p class="sub">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione at voluptates ipsam ipsum a molestias eveniet unde nihil expedita, necessitatibus, consequatur assumenda, maiores ullam. Similique dicta maxime aut ab.
-        </p>
 
-        <div class="search">
-            <input type="text" placeholder="Search...">
-            <input class = "button" type="submit" name="search" value="Search">
+        <div class = container_img>
+            <h1 class="title">WELCOME!</h1>
+            <p class="sub">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur ratione at voluptates ipsam ipsum a molestias eveniet unde nihil expedita, necessitatibus, consequatur assumenda, maiores ullam. Similique dicta maxime aut ab.
+            </p>
+
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+
+            <div class="btnholders">
+                {% if session["user_id"] %}
+                <form action="{{ url_for('post') }}" method="GET">
+                    <input class = "button" type="submit" name="post" value="Post Karenderya">
+                </form>
+
+                {% else %}
+                    <input class = "button" type="submit" name="post" value="Post Karenderya" disabled>
+                {% endif %}
+
+            </div>
+
+            <div id="map"></div>
         </div>
 
-        <form action="{{ url_for('post') }}" method="GET">
-            <input class = "button" type="submit" name="post" value="Post Karenderya">
-        </form>
-
-        <div id="map"></div>
 
     </section>
 
@@ -30,62 +42,26 @@
         <h1 class="title">Looking to eat?</h1>
         <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
 
-        <div class="post">
-
-                <button>Post Karenderya</button>
-
-        </div>
-
-
         <div class="container">
-            <div class="karenderya">
-                <h2 class="title">Cristobal Store</h2>
-                <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
 
-                <div class="btnholders">
-                    <button>Get Location</button>
-                    <button>Share Location</button>
-                    <button><i class="fa-regular fa-star"></i> Star</button>
+            {% for post in posts %}
+                <div class="karenderya">
+                    <h2>{{post.store_name}}</h2>
+                    <p class="sub">Location: {{post.location}}, Latitude: {{post.latitude}}, Longitude: {{post.longitude}}</p>
+                    <div class="btnholders">
+                        <button>Get Location</button>
+                        <button>Share Location</button>
+
+                    </div>
+
+                    <div class="images">
+                        <img src = "{{ url_for ('static', filename = 'images/' + post.image ) }}" width="400px" height="400px">
+                    </div>
                 </div>
-
-                <div class="images"></div>
-            </div>
-
-            <div class="karenderya">
-                <h2 class="title">Cristobal Store</h2>
-                <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-
-                <div class="btnholders">
-                    <button>Get Location</button>
-                    <button>Share Location</button>
-                    <button><i class="fa-regular fa-star"></i> Star</button>
-                </div>
-
-                <div class="images"></div>
-            </div>
-
-            <div class="karenderya">
-                <h2 class="title">Cristobal Store</h2>
-                <p class="sub">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
-
-                <div class="btnholders">
-                    <button>Get Location</button>
-                    <button>Share Location</button>
-                    <button><i class="fa-regular fa-star"></i> Star</button>
-                </div>
-
-                <div class="images"></div>
-            </div>
+            {% endfor %}
 
         </div>
-
-
 
 
     </section>
-
-    <footer>
-        <h3>Made with love...</h3>
-    </footer>
-
 {% endblock %}

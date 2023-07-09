@@ -6,16 +6,24 @@
 
 {% block main %}
 
-    <div class="container">
+    <div class="form_container">
             <div class="post">
-                <h1>Post Karenderya</h1>
 
-                <form action="{{ url_for('post') }}" method="POST">
-                    <input type="text" id = "username" name="location" placeholder="Location " required>
-                    <input type="text" id = "username" name="price" placeholder="Satisfactory Price" required>
 
-                    <input class = "button" type="submit" name="submit" value="Post">
+                <form action="{{ url_for('post') }}" method="POST" enctype="multipart/form-data">
+                    <div class="input_container">
+                        <h1>Share!</h1>
+                        <input type="text" name="store" placeholder="Name of the store: (e.g Cristobal's Karenderya)" required>
+                        <input type="text" id = "location" name="location" placeholder="Location: (e.g Magsaysay Road near STI)" required>
+                        <input class = "button" id = "get_location" type="button" name="get_location" value="Share accurate location with us?" required>
+                        <input type="text" class = 'geo' id = "longitude" name="longitude" placeholder="Longitude ">
+                        <input type="text" class = 'geo' id = "latitude" name="latitude" placeholder="Latitude ">
+                        <input type="file" id = "input_img" name="img" accept="image/*">
+                        <input type="number" name="price" placeholder="₱0" required>
+                        <input class = "button" type="submit" name="submit" value="Post">
+                    </div>
                 </form>
+
 
                 {% with messages = get_flashed_messages() %}
                 {% if messages %}
