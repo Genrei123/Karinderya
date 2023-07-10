@@ -11,18 +11,18 @@
         <div class = container_img>
             <h1 class="title">WELCOME!</h1>
             <p class="sub">
-                Karenderyas is a concept of a website where the users are able to share food spots to other users within the website.
+                Karinderya is a concept of a website where the users are able to share food spots to other users within the website.
                 There are a lot of food spots that are not posted in the google maps or anywhere that only the locals know, but now everyone can know!
             </p>
 
             <div class="btnholders">
                 {% if session["user_id"] %}
                 <form action="{{ url_for('post') }}" method="GET">
-                    <input class = "button" type="submit" name="post" value="Post Karenderya">
+                    <input class = "button" type="submit" name="post" value="Post Karinderya">
                 </form>
 
                 {% else %}
-                    <input class = "button" type="submit" name="post" value="Post Karenderya" disabled>
+                    <input class = "button" type="submit" name="post" value="Post Karinderya" disabled>
                 {% endif %}
 
             </div>
@@ -37,7 +37,7 @@
         <div class = intro>
             {% if posts %}
                 <h1 class="title">Looking to eat?</h1>
-                <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                <p class="subtitle">Take a look at the menu!.</p>
             {% else %}
                 <h1 class="title">Nothing to show yet!</h1>
                 <p class="subtitle">Try coming back later. Or better yet be first to upload!</p>
@@ -55,7 +55,7 @@
                         <p><strong>Location: </strong>{{post.location}}</p>
 
                         {% if post.longitude != '' %}
-                            <a href = "https://www.google.com/maps?q= + {{post.longitude}} + , + {{post.latitude}}">Get Location</a>
+                            <a style="color: white; background: #2e6649; padding: 1em; "href = "https://www.google.com/maps?q= + {{post.longitude}} + , + {{post.latitude}}">Get Location</a>
 
                         {% else %}
                         <p><strong>Refer with the location and image!</strong></p>

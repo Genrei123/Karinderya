@@ -245,6 +245,10 @@ a:link {
     border: 1px solid black;
 }
 
+.karenderya a {
+    color: black;
+}
+
 
 /* Footer */
 footer {
