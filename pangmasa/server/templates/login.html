@@ -19,19 +19,21 @@
                         <input class = "button" type="submit" name="submit" value="Login">
 
                         <p>Don't have an account? <a href="{{url_for('register') }}">Click here!</a></p>
+
+                        {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                        <div class="flash-messages" style="background: red; color: white">
+                        {% for message in messages %}
+                            <div class = "eror">{{ message }}</div>
+                        {% endfor %}
+                        </div>
+                        {% endif %}
+                    {% endwith %}
                     </div>
                     
                 </form>
 
-                {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                <div class="flash-messages">
-                {% for message in messages %}
-                    <div class = "eror">{{ message }}</div>
-                {% endfor %}
-                </div>
-                {% endif %}
-            {% endwith %}
+
 
 
             </div>

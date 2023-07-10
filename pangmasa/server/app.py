@@ -29,6 +29,7 @@ class Posts(db.Model):
     longitude = db.Column(db.String(100))
     image = db.Column(db.String())
     price = db.Column(db.String())
+    description = db.Column(db.String())
 
     poster_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
@@ -131,6 +132,7 @@ def post():
         longitude = request.form.get('longitude')
         latitude = request.form.get('latitude')
         price = request.form.get('price')
+        description = request.form.get('description')
 
         image = request.files['img']
 
@@ -142,7 +144,7 @@ def post():
             filename = secure_filename(str(uuid.uuid1()) + image.filename)
             image.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
-        new_post = Posts(store_name=store_name, location=location, latitude=latitude, longitude=longitude, image=filename, price=price, poster_id = session["user_id"])
+        new_post = Posts(description=description, store_name=store_name, location=location, latitude=latitude, longitude=longitude, image=filename, price=price, poster_id = session["user_id"])
         db.session.add(new_post)
         db.session.commit()
         return redirect("/")

@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href= "{{ url_for ('static' , filename = 'icon.png') }}">
 
 
     <link rel="stylesheet" href= "{{ url_for('static', filename = 'styles.css') }} ">
     <script type="text/javascript" src= "{{ url_for ('static', filename = 'scroll.js') }}"></script>
     <script type="text/javascript" src= "{{ url_for ('static', filename = 'get_loc.js') }}"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 
 
@@ -26,7 +35,6 @@
             {% if session["user_id"] %}
             <ul>
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="#">About Us</a></li>
                 <li><a href="{{ url_for ('logout') }}">Log Out</a></li>
             </ul>
 
@@ -49,9 +57,7 @@
         {% block main %}{% endblock %}
     </main>
 
-    <footer>
-        <h3>Made with love...</h3>
-    </footer>
+
 
 
 
