@@ -29,6 +29,7 @@ And lastly lastly, I have wanted to use Google Maps API to view the actual locat
 - Open with your favorite IDE (this tutorial uses Visual Studio Code) and download the extensions.
 - Open the terminal execute `python -m venv .venv` and you are gonna see a file that have a name of '.venv' in your folder. That is the virtual environment that we are going to use to run this program.
 - Execute the command `.\.venv\Scripts\activate` and you are gonna see in your terminal that you are in the virtual environment.
+- In your terminal create `code .gitignore` then type `.venv` and save.
 - Execute `pip install flask` and wait. `pip install Flask-SQLAlchemy`
 - Go to 'server' directory and type in your terminal `flask run`
 
