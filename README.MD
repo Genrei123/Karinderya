@@ -28,5 +28,7 @@ And lastly lastly, I have wanted to use Google Maps API to view the actual locat
 - Clone the files with GitHub
 - Open with your IDE and make sure that the imports are installed properly
 - Ensure that you are in a virtual environment for Python or your own setup.
+// Run this command in Terminal if you have no virutal env in python `\pangmasa\pangmasa\librarries>  .\.venv\Scripts\activate`
 - Go to the server directory and look for app.py
 - Run the file with ''flask run''
+
