@@ -25,10 +25,20 @@ And lastly, I have tried to reference learnings from the Course and I believe I 
 And lastly lastly, I have wanted to use Google Maps API to view the actual locations within the website but I am unable to as they require card information as to which I unfortunately don't possess but the idea is still in there with the Get Location button that is implemented with the for loop in Jinja
 
 #### How to use
-- Clone the files with GitHub
-- Open with your IDE and make sure that the imports are installed properly
-- Ensure that you are in a virtual environment for Python or your own setup.
-// Run this command in Terminal if you have no virutal env in python `.\pangmasa\librarries\.venv\Scripts\activate`
-- Go to the server directory and look for app.py
-- Run the file with ''flask run''
+- Clone the files with GitHub and Make sure to have Python installed.
+- Open with your favorite IDE (this tutorial uses Visual Studio Code) and download the extensions.
+- Open the terminal execute `python -m venv .venv' and you are gonna see a file that have a name of '.venv' in your folder. That is the virtual environment that we are going to use to run this program.
+- Execute the command `.\.venv\Scripts\activate` and you are gonna see in your terminal that you are in the virtual environment.
+- Execute `pip install flask` and wait. `pip install Flask-SQLAlchemy`
+- Go to 'server' directory and type in your terminal `flask run`
+
+#### Folder notes
+Server/assets: images
+Server/app.py: The main application
+Server/templates: Contains the basic HTML files
+Server/static: javascripts and CSS
+
+
+
+
 
